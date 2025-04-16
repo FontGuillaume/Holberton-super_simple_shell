@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "main.h"
+#include "shell.h"
 
 /**
  * main - Affiche l'environnement en utilisant la variable globale environ

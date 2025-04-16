@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "main.h"
+#include "shell.h"
 
 /**
  * _getenv - Récupère la valeur d'une variable d'environnement

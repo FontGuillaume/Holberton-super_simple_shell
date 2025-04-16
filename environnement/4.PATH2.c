@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "main.h"
+#include "shell.h"
 
 /**
  * add_node_end - Ajoute un nouveau nœud à la fin de la liste

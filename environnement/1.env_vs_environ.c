@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "main.h"
+#include "shell.h"
 
 /**
  * main - Compare les adresses de env et environ
