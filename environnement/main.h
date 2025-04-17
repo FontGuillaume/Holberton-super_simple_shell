@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <unistd.h>
+
+
+extern char **environ;
 
 /**
  * struct path_node - Nœud d'une liste chaînée pour les répertoires PATH
