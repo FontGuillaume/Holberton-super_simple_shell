@@ -10,7 +10,6 @@
 int main(void)
 {
 	/* Déclaration de la variable globale environ */
-	extern char **environ;
 	int i = 0;
 
 	/* Parcours de toutes les variables d'environnement */
