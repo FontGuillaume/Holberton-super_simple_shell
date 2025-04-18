@@ -17,13 +17,10 @@ int main(void)
 	nread = getline(&line, &len, stdin);
 
 	if (nread != -1)
-	{
-		printf("%s", line);
-	}
+		fprintf(stderr, "%s: command not found", line);
+
 	else
-	{
 		printf("\n");
-	}
 
 	free(line);
 	return (0);
