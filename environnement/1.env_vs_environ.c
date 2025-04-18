@@ -12,12 +12,9 @@
  */
 int main(int argc, char *argv[], char *env[])
 {
-	/* Déclaration de la variable globale environ */
-	extern char **environ;
-
 	/* Affichage des adresses */
-	printf("Adresse de env: %p\n", (void *)env);
-	printf("Adresse de environ: %p\n", (void *)environ);
+	printf("Adresse de env: %p\n", *env);
+	printf("Adresse de environ: %p\n", *environ);
 
 	/* Comparaison des adresses */
 	if (env == environ)

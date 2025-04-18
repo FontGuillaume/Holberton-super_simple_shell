@@ -39,7 +39,7 @@ char **split_string(char *str)
 	token = strtok(str, " \t\n");
 	while (token != NULL)
 	{
-		array[i++] = strdup(token);
+		array[i++] = _strdup(token);
 		token = strtok(NULL, " \t\n");
 	}
 	array[i] = NULL;

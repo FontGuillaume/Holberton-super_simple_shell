@@ -1,0 +1,36 @@
+#include "shell.h"
+/**
+ * _strncmp - Compare deux chaînes jusqu'à n caractères
+ * @s1: Première chaîne à comparer
+ * @s2: Deuxième chaîne à comparer
+ * @n: Nombre maximum de caractères à comparer
+ *
+ * Return: Entier négatif, zéro ou positif si s1 est respectivement
+ * inférieure, égale ou supérieure à s2
+ */
+int _strncmp(const char *s1, const char *s2, size_t n)
+{
+    size_t i;
+
+    /* Protection contre les pointeurs NULL */
+    if (s1 == NULL && s2 == NULL)
+        return (0);
+    if (s1 == NULL)
+        return (-1);
+    if (s2 == NULL)
+        return (1);
+
+    /* Comparaison caractère par caractère jusqu'à n */
+    for (i = 0; i < n; i++)
+    {
+        /* Si les caractères sont différents */
+        if (s1[i] != s2[i])
+            return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+
+        /* Si on atteint la fin d'une des chaînes */
+        if (s1[i] == '\0')
+            return (0);  /* Les deux sont égales jusqu'ici */
+    }
+    /* Si on a comparé exactement n caractères */
+    return (0);
+}

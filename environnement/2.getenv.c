@@ -11,7 +11,6 @@
  */
 char *_getenv(const char *name)
 {
-	extern char **environ;
 	int i;
 	size_t name_len;
 
@@ -20,13 +19,13 @@ char *_getenv(const char *name)
 		return (NULL);
 
 	/* Longueur du nom de la variable */
-	name_len = strlen(name);
+	name_len = _strlen(name);
 
 	/* Parcourir l'environnement */
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		/* Vérifie si cette entrée commence par le nom recherché suivi de '=' */
-		if (strncmp(environ[i], name, name_len) == 0 && environ[i][name_len] == '=')
+		if (_strncmp(environ[i], name, name_len) == 0 && environ[i][name_len] == '=')
 		{
 			/* Retourne un pointeur vers la valeur (juste après le '=') */
 			return (&environ[i][name_len + 1]);

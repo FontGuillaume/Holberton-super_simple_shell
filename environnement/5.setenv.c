@@ -39,7 +39,7 @@ char *_getenv(const char *name)
  *
  * Return: Index de la variable ou -1 si non trouvée
  */
-int _find_env_index(const char *name)
+int find_env_index(const char *name)
 {
 	int i;
 	size_t name_len;
@@ -47,11 +47,11 @@ int _find_env_index(const char *name)
 	if (name == NULL || *name == '\0')
 		return (-1);
 
-	name_len = strlen(name);
+	name_len = _strlen(name);
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		if (strncmp(environ[i], name, name_len) == 0 && environ[i][name_len] == '=')
+		if (_strncmp(environ[i], name, name_len) == 0 && environ[i][name_len] == '=')
 		{
 			return (i);
 		}
@@ -75,7 +75,7 @@ int _setenv(const char *name, const char *value, int overwrite)
 	size_t entry_len;
 
 	/* Vérification des arguments */
-	if (name == NULL || *name == '\0' || strchr(name, '=') != NULL)
+	if (name == NULL || *name == '\0' || _strchr(name, '=') != NULL)
 		return (-1);
 
 	/* Vérifier si la variable existe déjà */
@@ -86,7 +86,7 @@ int _setenv(const char *name, const char *value, int overwrite)
 		return (0);
 
 	/* Créer la nouvelle entrée name=value */
-	entry_len = strlen(name) + strlen(value) + 2; /* +2 pour '=' et '\0' */
+	entry_len = _strlen(name) + _strlen(value) + 2; /* +2 pour '=' et '\0' */
 	new_entry = malloc(entry_len);
 	if (new_entry == NULL)
 		return (-1);
