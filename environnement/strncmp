@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * _strncmp - Compare deux chaînes jusqu'à n caractères
  * @s1: Première chaîne à comparer
